@@ -27,7 +27,7 @@ jobs:
     - name: Docker new Image
       uses: ./.github/actions/docker_build
       with:
-        image_name: ${{ env.IMAGE_NAME }}/academy
+        image_name: ${{ env.IMAGE_NAME }}
         tag_name: ${{ env.TAG_NAME }}
         path_dockerfile: "src/main/docker/Dockerfile.jvm"
     - name: Images ls
