@@ -31,3 +31,7 @@ jobs:
       uses: ./.github/actions/maven_build
     - name: Docker new Image
       uses: ./.github/actions/docker_build
+      with:
+        image_name: "academy"
+        tag_name: "v1.0"              # Optional: Tag name, can be omitted to use timestamp
+        path_dockerfile: "src/main/docker/Dockerfile.jvm"
