@@ -1,0 +1,5 @@
+name: Replace-With-Your-Action-Name
+description: Replace-With-Your-Action-Description
+runs:
+  steps:
+  - run: mvn -B package --file pom.xmls
