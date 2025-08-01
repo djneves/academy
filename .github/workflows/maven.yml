@@ -38,12 +38,12 @@ jobs:
         tag_name: ${{ env.TAG_NAME }}
         path_dockerfile: "src/main/docker/Dockerfile.jvm"
     - name: Save Docker img
-      run: docker save -o ${{ env.DOCKER_IMAGE_NAME }}-${{ env.DOCKER_TAG_NAME }}.tar ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG_NAME }}
+      run: docker save -o ${{ env.IMAGE_NAME }}-${{ env.TAG_NAME }}.tar ${{ env.IMAGE_NAME }}:${{ env.TAG_NAME }}
     - name: Upload Docker img as artifact
       uses: actions/checkout@v4
       with:
         name: ${{ env.ARTIFACT_NAME }}
-        path: ${{ env.DOCKER_IMAGE_NAME }}-${{ env.DOCKER_TAG_NAME }}.tar
+        path: ${{ env.IMAGE_NAME }}-${{ env.TAG_NAME }}.tar
   list-imgs:
     needs: build
     runs-on: ubuntu-latest
