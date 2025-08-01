@@ -16,9 +16,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -33,5 +31,12 @@ jobs:
       uses: ./.github/actions/docker_build
       with:
         image_name: "academy"
-        tag_name: ""              # Optional: Tag name, can be omitted to use timestamp
+        tag_name: ""
         path_dockerfile: "src/main/docker/Dockerfile.jvm"
+
+  list-imgs:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Images ls
+        run: docker image ls

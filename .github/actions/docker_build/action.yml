@@ -26,6 +26,4 @@
           fi
 
           docker build . --file "$dockerfile_path" --tag "$image:$TAG"
-
-          docker image ls
         shell: bash
