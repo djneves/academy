@@ -36,7 +36,8 @@ jobs:
         image_name: ${{ env.IMAGE_NAME }}
         tag_name: ${{ env.TAG_NAME }}
         path_dockerfile: "src/main/docker/Dockerfile.jvm"
-
+    - name: Save Docker img
+      run: docker save -o ${{ env.DOCKER_IMAGE_NAME }}-${{ env.DOCKER_TAG_NAME }}.tar ${{ env.DOCKER_IMAGE_NAME }}:${{ env.DOCKER_TAG_NAME }}
   list-imgs:
     needs: build
     runs-on: ubuntu-latest
