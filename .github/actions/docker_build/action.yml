@@ -25,5 +25,5 @@
             export TAG="$tag"
           fi
 
-          docker build . --file "$dockerfile_path" --tag "$academy/image:$TAG"
+          docker build . --file "$dockerfile_path" --tag "academy/$image:$TAG"
         shell: bash
