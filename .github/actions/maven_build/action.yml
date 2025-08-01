@@ -1,5 +1,7 @@
-name: Replace-With-Your-Action-Name
-description: Replace-With-Your-Action-Description
+name: Maven
+description: Maven build
 runs:
+  using: composite
   steps:
-  - run: mvn -B package --file pom.xmls
+    - run: mvn -B package --file pom.xmls
+      shell: bash
