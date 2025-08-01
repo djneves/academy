@@ -32,3 +32,8 @@ jobs:
         path_dockerfile: "src/main/docker/Dockerfile.jvm"
     - name: Images ls
       run: docker image ls
+    - name: Docker login
+      uses: ./.github/actions/docker_push
+      with:
+        DOCKERHUB_TOKEN: ${{ vars.DOCKERHUB_USERNAME }}
+        DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_TOKEN }}
